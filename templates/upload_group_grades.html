@@ -1,0 +1,36 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center">Upload Group Grades for {{ assignment.title }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Display groups and grade input fields -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Group Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for group in groups %}
+                <tr>
+                    <td>{{ group.name }}</td>
+                    <td>
+                        <!-- Input field for grades for each group -->
+                        <input type="number" name="marks_{{ group.id }}" step="0.1" min="0" class="form-control" required>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Submit button to upload grades -->
+        <button type="submit" class="btn btn-primary">Upload Grades</button>
+    </form>
+</div>
+{% endblock %}

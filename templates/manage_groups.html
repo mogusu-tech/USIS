@@ -1,0 +1,99 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4 display-4 text-primary font-weight-bold animate__animated animate__fadeIn">
+        Manage Groups
+    </h1>
+
+    <!-- Group Creation Form -->
+    <div class="card mb-4 shadow-lg rounded">
+        <div class="card-header bg-primary text-white">
+            <h4>Create New Group</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Create Group</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Display Existing Groups -->
+    <div class="card shadow-lg rounded">
+        <div class="card-header bg-primary text-white">
+            <h4>Existing Groups</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover table-striped table-responsive">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Lecturer</th>
+                        <th>Description</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for group in groups %}
+                    <tr>
+                        <td>{{ group.name }}</td>
+                        <td>{{ group.lecturer_name }}</td>
+                        <td>{{ group.description }}</td>
+                        <td>{{ group.created_at|date:"M d, Y" }}</td>
+                        <td class="text-center">
+                            <!-- Add edit and delete actions (these can be linked to other views) -->
+                            <a href="{% url 'edit_group' group.id %}" class="btn btn-warning btn-sm mx-1">Edit</a>
+                            <a href="{% url 'delete_group' group.id %}" class="btn btn-danger btn-sm mx-1">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">No groups available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Back to Dashboard Button at Bottom -->
+    <div class="text-center mt-5">
+        <a href="{% url 'lecturer_dashboard' %}" class="btn btn-outline-primary btn-lg">
+            Back to Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Add animation styles and external dependencies -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+    h1 {
+        font-family: 'Arial Black', sans-serif;
+        color: #007BFF;
+        animation: fadeInDown 1.5s ease-in-out;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+        transform: scale(1.01);
+        transition: all 0.3s ease-in-out;
+    }
+    .btn {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+        transform: scale(1.05);
+    }
+    .table-responsive {
+        margin-top: 30px;
+    }
+    .card {
+        border-radius: 15px;
+    }
+</style>
+{% endblock %}

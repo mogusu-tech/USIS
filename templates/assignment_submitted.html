@@ -1,0 +1,10 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Assignment Submitted</h1>
+    <p>Your assignment for <strong>{{ assignment.title }}</strong> has been successfully submitted.</p>
+    <a href="{% url 'student_dashboard' %}" class="btn btn-primary">Back to Dashboard</a>
+</div>
+{% endblock %}

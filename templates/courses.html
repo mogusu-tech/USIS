@@ -1,0 +1,121 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Groups<br></h1>
+                        <p class="mb-0">Explore groups, view details, and participate in group projects or assignments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current">Groups</li>
+                </ol>
+            </div>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Groups Section -->
+    <section id="groups" class="section groups">
+
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- Group List -->
+                <div class="col-lg-12 content" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Available Groups</h3>
+                    <p class="fst-italic">Join a group, view project details, or make payments for assignments!</p>
+                    <div class="group-list">
+
+                        <!-- Example Group Item with Icon and Details -->
+                        <div class="group-item" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="group-icon">
+                                <img src="group-icon-1.jpg" alt="Group Icon" class="img-fluid">
+                            </div>
+                            <div class="group-details">
+                                <h4>Group Name 1</h4>
+                                <p>Description of the group. This group is focused on software development projects.</p>
+                                <p><strong>Project:</strong> "E-commerce Website" (Deadline: 30th Dec)</p>
+                                <a href="#join-group" class="btn btn-primary">Join Group</a>
+                                <a href="#view-details" class="btn btn-info">View Details</a>
+                                <a href="#pay-assignment" class="btn btn-success">Pay for Assignment</a>
+                            </div>
+                        </div>
+
+                        <!-- Example Group Item with Icon and Details -->
+                        <div class="group-item" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="group-icon">
+                                <img src="group-icon-2.jpg" alt="Group Icon" class="img-fluid">
+                            </div>
+                            <div class="group-details">
+                                <h4>Group Name 2</h4>
+                                <p>Description of the group. This group focuses on marketing projects and assignments.</p>
+                                <p><strong>Project:</strong> "Digital Marketing Strategy" (Deadline: 15th Dec)</p>
+                                <a href="#join-group" class="btn btn-primary">Join Group</a>
+                                <a href="#view-details" class="btn btn-info">View Details</a>
+                                <a href="#pay-assignment" class="btn btn-success">Pay for Assignment</a>
+                            </div>
+                        </div>
+
+                        <!-- Example Group Item with Icon and Details -->
+                        <div class="group-item" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="group-icon">
+                                <img src="group-icon-3.jpg" alt="Group Icon" class="img-fluid">
+                            </div>
+                            <div class="group-details">
+                                <h4>Group Name 3</h4>
+                                <p>Description of the group. This group works on creative design projects.</p>
+                                <p><strong>Project:</strong> "Website UI/UX Redesign" (Deadline: 20th Dec)</p>
+                                <a href="#join-group" class="btn btn-primary">Join Group</a>
+                                <a href="#view-details" class="btn btn-info">View Details</a>
+                                <a href="#pay-assignment" class="btn btn-success">Pay for Assignment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group Details Modal (example) -->
+                <div class="col-lg-12 group-details-modal" data-aos="fade-up" data-aos-delay="500">
+                    <!-- Modal content would be shown here when clicking View Details -->
+                    <!-- Example Group Detail Modal (you can trigger it via JavaScript) -->
+                    <div id="view-details" class="modal fade" tabindex="-1" aria-labelledby="groupDetailsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="groupDetailsModalLabel">Group Name 1 Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>Project Overview:</h6>
+                                    <p>Description of the project, goals, and expected outcomes.</p>
+                                    <h6>Team Members:</h6>
+                                    <p>List of team members involved in the project.</p>
+                                    <h6>Payment Details:</h6>
+                                    <p>Information on the payment for group assignments.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section><!-- /Groups Section -->
+
+</main>
+{% endblock %}

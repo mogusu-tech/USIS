@@ -1,0 +1,33 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Group Members for {{ group.name }}</h1>
+    
+    <h3>Lecturer: {{ group.lecturer_name }}</h3>
+    <h4>Description: {{ group.description }}</h4>
+    
+    <h3>Members</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in group_members %}
+                <tr>
+                    <td>{{ member.user_username }}</td> <!-- Display the username -->
+                    <td>{{ member.user_id }}</td> <!-- Display the user ID -->
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2" class="text-center">No members in this group.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

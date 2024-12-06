@@ -1,0 +1,22 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Submit Assignment</h1>
+
+    <h3>{{ assignment.title }}</h3>
+    <p>{{ assignment.description }}</p>
+    <p><strong>Course:</strong> {{ assignment.course }}</p>
+    <p><strong>Deadline:</strong> {{ assignment.deadline|date:"M d, Y H:i" }}</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="file">Upload Your File</label>
+            <input type="file" class="form-control" name="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Assignment</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Payment Initiated Successfully</h1>
+              <p class="mb-0">Your M-Pesa payment initiation has been completed successfully. We are processing your transaction, and you will receive a confirmation once the payment is confirmed. Thank you for using our platform!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Payment Success</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Success Message Section -->
+    <section id="payment-success" class="payment-success section">
+
+      <div class="container">
+
+        <div class="row gy-3">
+
+          <div class="col-xl-12 col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="payment-item">
+              <h3>Transaction Success</h3>
+              <p class="lead">We have received your payment request and are currently processing it. You will receive an SMS and email notification once the payment is successfully completed.</p>
+              <hr>
+              <ul>
+                <li>Transaction ID: <strong>MPESA12345</strong></li>
+                <li>Status: <strong>Processing</strong></li>
+                <li>Expected Confirmation: <strong>Within 10 minutes</strong></li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="{% url 'student_dashboard' %}" class="btn btn-success mt-3">Return to Dashboard</a>
+              </div>
+            </div>
+          </div><!-- End Success Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Success Section -->
+
+  </main>
+
+{% endblock %}

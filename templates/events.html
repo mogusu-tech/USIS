@@ -1,0 +1,65 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Events</h1>
+                        <p class="mb-0">Stay updated with our latest events and learn new skills. Our events are designed to provide you with valuable insights on various topics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li class="current">Events</li>
+                </ol>
+            </div>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Events Section -->
+    <section id="events" class="events section">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <!-- Event 1 -->
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="{% static 'assets/img/events-item-1.jpg' %}" alt="Introduction to Webdesign">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="">Introduction to Web Design</a></h5>
+                            <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p>
+                            <p class="card-text">Join us for an exciting introduction to web design, where you'll learn the basics of creating beautiful, functional websites.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="{% static 'assets/img/events-item-2.jpg' %}" alt="Marketing Strategies">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="">Marketing Strategies</a></h5>
+                            <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p>
+                            <p class="card-text">Explore the best marketing strategies to help you succeed in your business. Learn from industry experts about practical techniques for success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /Events Section -->
+
+</main>
+{% endblock %}

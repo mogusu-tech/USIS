@@ -1,0 +1,90 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>About Our Student Management System<br></h1>
+                        <p class="mb-0">Our system helps streamline student and lecturer interactions, enabling easy group creation, assignment posting, and more. The platform is designed to ensure efficiency and accessibility for all users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li class="current">About Us<br></li>
+                </ol>
+            </div>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <!-- About Us Section -->
+    <section id="about-us" class="section about-us">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'assets/img/about-2.jpg' %}" class="img-fluid" alt="Student Management System Overview">
+                </div>
+
+                <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Streamlining Education Management</h3>
+                    <p class="fst-italic">
+                        Our platform simplifies the management of students and courses by integrating key features such as group creation, timetable organization, and assignment posting.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span>Easy group creation for students and lecturers.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Lecturers can create and post assignments directly to students.</span></li>
+                        <li><i class="bi bi-check-circle"></i> <span>Organized timetable and student schedules for smooth learning.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!-- /About Us Section -->
+
+    <!-- Counts Section -->
+    <section id="counts" class="section counts light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Students</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Courses</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Events</p>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item text-center w-100 h-100">
+                        <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Trainers</p>
+                    </div>
+                </div><!-- End Stats Item -->
+            </div>
+        </div>
+    </section><!-- /Counts Section -->
+
+
+
+</main>
+{% endblock %}

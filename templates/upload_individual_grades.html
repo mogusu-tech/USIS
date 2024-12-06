@@ -1,0 +1,36 @@
+<!-- upload_individual_grades.html -->
+
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Upload Grades for {{ assignment.title }}</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+          <tr>
+            <td>{{ student.username }}</td>
+            <td>
+              <input type="number" name="grade_{{ student.id }}" step="0.01" min="0" max="100">
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary">Save Grades</button>
+  </form>
+
+  <br>
+  <a href="{% url 'view_assignments' %}" class="btn btn-secondary">Back to Assignments</a>
+{% endblock %}

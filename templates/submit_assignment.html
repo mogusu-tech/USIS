@@ -1,0 +1,13 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+ <h2>Submit Assignment: {{ assignment.title }}</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Upload Your File:</label><br>
+        <input type="file" name="file" required><br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

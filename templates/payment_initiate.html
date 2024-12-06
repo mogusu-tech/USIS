@@ -1,0 +1,60 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Initiate Payment</h2>
+                </div>
+                <div class="card-body">
+                    {% if error %}
+                    <div class="alert alert-danger text-center">{{ error }}</div>
+                    {% endif %}
+
+                    <!-- Group Information (Non-Editable) -->
+                    <div class="mb-3">
+                        <label class="form-label">Selected Group</label>
+                        <input type="text" class="form-control" value="{{ group.name }}" disabled>
+                    </div>
+
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+
+                        <!-- Phone Number -->
+                        <div class="mb-3">
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input type="text" name="phone_number" id="phone_number" class="form-control"
+                                   placeholder="2547XXXXXXXX" pattern="^2547[0-9]{8}$" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid Kenyan phone number (e.g., 2547XXXXXXXX).
+                            </div>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount</label>
+                            <input type="number" name="amount" id="amount" class="form-control" min="1" step="0.01" required>
+                        </div>
+
+                        <!-- Hidden Group ID -->
+                        <input type="hidden" name="group_id" value="{{ group.id }}">
+
+                        <!-- Submit Button -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg w-100">
+                                Proceed with Payment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'view_group' %}" class="btn btn-link">Back to Payments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

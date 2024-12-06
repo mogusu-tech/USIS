@@ -1,0 +1,22 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Edit Group</h1>
+
+    <!-- Group Edit Form -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Edit Group: {{ group.name }}</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
